@@ -72,5 +72,30 @@ public class ArrayListAlgorithms {
         }
     }
 
+    /** Returns the index at which the minimum value of all integers in
+     *  intList appears; if the minimum value appears more than once in
+     *  the arraylist, return the index of the first occurrence
+     *
+     *  Does NOT mutate (modify) elements in intList.
+     *  PRECONDITION: intList.size() > 0
+     *
+     *  @param intList  original arraylist of Integers
+     *  @return  the index at which the minimum value occurs
+     */
+    public static int indexOfMinimum(ArrayList<Integer> intList)
+    {
+        int min = intList.get(0);
+        int minIndex = 0;
+        for(int i = 0; i<intList.size(); i++)
+        {
+            if(intList.get(i) < min)
+            {
+                min = intList.get(i);
+                minIndex = i;
+            }
+        }
+        return minIndex;
+    }
+
 
 }
