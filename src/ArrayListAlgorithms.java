@@ -97,5 +97,33 @@ public class ArrayListAlgorithms {
         return minIndex;
     }
 
+    /** Returns true if two array lists of the same length contain the exact
+     *  same elements in the same order (i.e. the two arraylists are identical).
+     *  Returns false otherwise.
+     *
+     *  Does NOT mutate (modify) elements in either arraylist
+     *  PRECONDITION: numList1.size() == numList2.size()
+     *
+     *  @param numList1  first arraylist of Integers
+     *  @param numList2  second arraylist of Integers, has the same size a first
+     *  @return  true if both arraylists are identical, element for element
+     */
+    public static boolean areIdentical(ArrayList<Integer> numList1, ArrayList<Integer> numList2)
+    {
+        int numEqual = 0;
+        for(int i = 0; i< numList1.size(); i++)
+        {
+            if(numList1.get(i) == numList2.get(i))
+            {
+                numEqual++;
+            }
+            if(numEqual == numList1.size())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
 }
