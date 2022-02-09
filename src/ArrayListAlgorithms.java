@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class ArrayListAlgorithms {
     /**
@@ -48,5 +49,28 @@ public class ArrayListAlgorithms {
         }
         return less;
     }
+
+    /** Replaces all words in wordList that end in "s" with the all-uppercase
+     *  version of the word.  For example, "apples" should be replaced with "APPLES".
+     *  Assume all letters of all words in wordList are lowercase initially (no need
+     *  to worry about checking for case or converting first to lowercase)
+     *
+     *  DOES mutate (modify) elements of wordList.
+     *  PRECONDITION: wordList.size() > 0
+     *
+     *  @param wordList  original arraylist of words
+     */
+    public static void replaceWithCaps(ArrayList<String> wordList)
+    {
+        for(int i = 0; i< wordList.size(); i++)
+        {
+            String word = wordList.get(i);
+            if(word.indexOf("s", word.length()-1)!=-1)
+            {
+                wordList.set(i, word.toUpperCase(Locale.ROOT));
+            }
+        }
+    }
+
 
 }
