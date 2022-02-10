@@ -45,16 +45,27 @@ public class ArrayListMadnessRunner {
 //        index = ArrayListAlgorithms.indexOfMinimum(intList6);
 //        System.out.println(index);
 
-        ArrayList<Integer> intList7 = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 5));
-        ArrayList<Integer> intList8 = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 5));
-        ArrayList<Integer> intList9 = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 6));
-        ArrayList<Integer> intList10 = new ArrayList<Integer>(Arrays.asList(1, 2, 7, 4, 6));
-        boolean identical = ArrayListAlgorithms.areIdentical(intList7, intList8);
-        System.out.println(identical);
-        identical = ArrayListAlgorithms.areIdentical(intList8, intList9);
-        System.out.println(identical);
-        identical = ArrayListAlgorithms.areIdentical(intList9, intList10);
-        System.out.println(identical);
+//        ArrayList<Integer> intList7 = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 5));
+//        ArrayList<Integer> intList8 = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 5));
+//        ArrayList<Integer> intList9 = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 6));
+//        ArrayList<Integer> intList10 = new ArrayList<Integer>(Arrays.asList(1, 2, 7, 4, 6));
+//        boolean identical = ArrayListAlgorithms.areIdentical(intList7, intList8);
+//        System.out.println(identical);
+//        identical = ArrayListAlgorithms.areIdentical(intList8, intList9);
+//        System.out.println(identical);
+//        identical = ArrayListAlgorithms.areIdentical(intList9, intList10);
+//        System.out.println(identical);
+
+        ArrayList<Integer> intList11 = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 5, 6, 7));
+        ArrayListAlgorithms.removeOdds(intList11);
+        System.out.println(intList11);
+        ArrayList<Integer> intList12 = new ArrayList<Integer>(Arrays.asList(2, 4, 6, 8, 10));
+        ArrayListAlgorithms.removeOdds(intList12);
+        System.out.println(intList12);
+        ArrayList<Integer> intList13 = new ArrayList<Integer>(Arrays.asList(1, 3, 5, 7, 9));
+        ArrayListAlgorithms.removeOdds(intList13);
+        System.out.println(intList13);
+
 
 
 

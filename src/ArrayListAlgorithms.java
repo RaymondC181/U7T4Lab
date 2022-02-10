@@ -125,5 +125,22 @@ public class ArrayListAlgorithms {
         return false;
     }
 
-
+    /** Removes all elements from numList that are ODD Integers.
+     *
+     *  DOES mutate (modify) elements in numList
+     *  PRECONDITION: numList1.size() > 0
+     *
+     *  @param numList1  arraylist of Integers
+     */
+    public static void removeOdds(ArrayList<Integer> numList1)
+    {
+        for(int i = 0; i<numList1.size(); i++)
+        {
+            if(numList1.get(i) % 2 == 1)
+            {
+                numList1.remove(i);
+                i--;
+            }
+        }
+    }
 }
