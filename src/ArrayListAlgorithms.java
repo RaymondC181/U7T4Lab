@@ -259,10 +259,18 @@ public class ArrayListAlgorithms {
      */
     public static ArrayList<String> parseWordsAndReverse(String sentence)
     {
-        for()
+        ArrayList<String> returnList = new ArrayList<String>();
+        String updatedSentence = sentence;
+        int index = 0;
+        while (updatedSentence.indexOf(" ") != -1)
         {
-
+            index = updatedSentence.indexOf(" ");
+            String word = updatedSentence.substring(0, index);
+            returnList.add(0, word);
+            updatedSentence = updatedSentence.substring(index + 1);
         }
+        returnList.add(0, updatedSentence);
+        return returnList;
     }
 
 
@@ -280,8 +288,19 @@ public class ArrayListAlgorithms {
      *
      *  @param wordList  arraylist of words
      */
-//    public static void moveBWords(ArrayList<String> wordList)
-//    { /* implement this method! */ }
+    public static void moveBWords(ArrayList<String> wordList)
+    {
+        int nextIndexToInsert = 0;
+        for(int i = 0; i< wordList.size(); i++)
+        {
+            if(wordList.get(i).substring(0, 1).equals("b"))
+            {
+                String removed = wordList.remove(i);
+                wordList.add(nextIndexToInsert, removed);
+                nextIndexToInsert++;
+            }
+        }
+    }
 
 
     /** Returns arraylist of Integers that contain all mode(s) of the int array numList.
@@ -305,8 +324,33 @@ public class ArrayListAlgorithms {
      *
      *  @param numList  numList of ints
      */
-//    public static ArrayList<Integer> modes(int[] numList)
-//    { /* implement this method! */ }
+    public static ArrayList<Integer> modes(int[] numList)
+    {
+        ArrayList<Integer> modes = new ArrayList<>();
+        int maxCount = 1;
+        for(int i = 0; i< numList.length; i++)
+        {
+            int count = 1;
+            for(int j =i+1; j< numList.length; j++)
+            {
+                if(numList[i] == numList[j])
+                {
+                    count++;
+                }
+            }
+            if(count>maxCount)
+            {
+                maxCount = count;
+                modes.clear();
+                modes.add(numList[i]);
+            }
+            else if(count == maxCount && count != 1)
+            {
+                modes.add(numList[i]);
+            }
+        }
+        return modes;
+    }
 
 
 
