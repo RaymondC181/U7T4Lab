@@ -158,7 +158,21 @@ public class ArrayListAlgorithms {
      */
     public static void wackyVowels(ArrayList<String> wordList)
     {
-
+        for(int i = 0 ; i<wordList.size(); i++)
+        {
+            String word = wordList.get(i);
+            boolean contains = (word.indexOf("a")!=-1)||(word.indexOf("e")!=-1)||(word.indexOf("i")!=-1)||(word.indexOf("o")!=-1);
+            if(contains == true)
+            {
+                wordList.remove(i);
+                i--;
+            }
+            else
+            {
+                wordList.add(i, word);
+                i++;
+            }
+        }
     }
 
     /** Removes all duplicate values from an intList, leaving only the first
@@ -170,8 +184,20 @@ public class ArrayListAlgorithms {
      *
      *  @param intList  intList of Integers
      */
-//    public static void removeDuplicates(ArrayList<Integer> intList)
-//    { /* implement this method! */ }
+    public static void removeDuplicates(ArrayList<Integer> intList)
+    {
+        for(int i = 0; i< intList.size(); i++)
+        {
+            for(int j = i+1; j< intList.size(); j++)
+            {
+                if(intList.get(i) == intList.get(j))
+                {
+                    intList.remove(j);
+                    j--;
+                }
+            }
+        }
+    }
 
     /** Adds an uppercase version of each string directly AFTER the string
      *  in wordList; for example, if wordList is ["hello", "my", "best", "friend"]
@@ -185,8 +211,15 @@ public class ArrayListAlgorithms {
      *
      *  @param wordList  arraylist of Strings
      */
-//    public static void duplicateUpperAfter(ArrayList<String> wordList)
-//    { /* implement this method! */ }
+    public static void duplicateUpperAfter(ArrayList<String> wordList)
+    {
+        for(int i = 0; i<wordList.size(); i++)
+        {
+            String word = wordList.get(i);
+            wordList.add(i+1,word.toUpperCase(Locale.ROOT));
+            i++;
+        }
+    }
 
 
     /** Appends an uppercase version of each string to the END of of wordList;
@@ -202,8 +235,10 @@ public class ArrayListAlgorithms {
      *
      *  @param wordList  arraylist of Strings
      */
-//    public static void duplicateUpperEnd(ArrayList<String> wordList)
-//    { /* implement this method! */ }
+    public static void duplicateUpperEnd(ArrayList<String> wordList)
+    {
+
+    }
 
 
     /** Returns an arraylist of Strings that represents the input sentence parsed
