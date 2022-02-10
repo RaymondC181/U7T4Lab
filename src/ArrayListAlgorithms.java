@@ -237,7 +237,12 @@ public class ArrayListAlgorithms {
      */
     public static void duplicateUpperEnd(ArrayList<String> wordList)
     {
-
+        int current = wordList.size();
+        for(int i = 0; i<current; i++)
+        {
+            String word = wordList.get(i);
+            wordList.add(word.toUpperCase(Locale.ROOT));
+        }
     }
 
 
@@ -252,8 +257,13 @@ public class ArrayListAlgorithms {
     separated by spaces
      *  @return  new arraylist of Strings containing the words of sentence reversed
      */
-//    public static ArrayList<String> parseWordsAndReverse(String sentence)
-//    { /* implement this method! */ }
+    public static ArrayList<String> parseWordsAndReverse(String sentence)
+    {
+        for()
+        {
+
+        }
+    }
 
 
     /** Removes all words from wordList that begin with "b" and inserts them at the
